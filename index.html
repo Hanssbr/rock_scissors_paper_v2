@@ -3,12 +3,79 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Batu Gunting Kertas</title>
   </head>
   <body>
-    <img src="gunting.jpg" alt="gunting" width="100rem" id="gunting" value="gunting"/>
-    <img src="batu.jpg" alt="batu" width="100rem" id="batu" />
-    <img src="paper.jpg" alt="paper" width="100rem" id="kertas" />
-    <script src="index.js"></script>
+    <div class="container">
+      <h1
+        style="
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-bottom: 4rem;
+        "
+      >
+        BATU GUNTING KERTAS V2
+      </h1>
+      <div style="display: flex; justify-content: center">
+        <div
+          style="
+            display: flex;
+            grid-row: auto;
+            justify-content: space-between;
+            align-items: center;
+            width: 30rem;
+          "
+        >
+          <img
+            src="gunting.jpg"
+            alt="gunting"
+            width="100rem"
+            id="gunting"
+            value="gunting"
+          />
+          <img src="batu.jpg" alt="batu" width="100rem" id="batu" />
+          <img src="paper.jpg" alt="paper" width="100rem" id="kertas" />
+          <script src="index.js"></script>
+        </div>
+      </div>
+
+      <div style="display: flex; justify-content: center; align-items: center">
+        <div class="loader" id="loader" style="display: none"></div>
+      </div>
+      <div style="display: flex; justify-content: center; align-items: center">
+        <p id="loading" style="display: none"></p>
+      </div>
+    </div>
+
+    <style>
+      .loader {
+        display: none;
+        width: 45px;
+        aspect-ratio: 1;
+        --c: no-repeat linear-gradient(#000 0 0);
+        background: var(--c), var(--c), var(--c), var(--c), var(--c), var(--c);
+        animation: l14-1 0.5s infinite alternate, l14-2 2s infinite;
+      }
+      @keyframes l14-1 {
+        0%,
+        10% {
+          background-size: 20% 100%;
+        }
+        100% {
+          background-size: 20% 20%;
+        }
+      }
+      @keyframes l14-2 {
+        0%,
+        49.9% {
+          background-position: 0 0, 0 100%, 50% 50%, 50% 50%, 100% 0, 100% 100%;
+        }
+        50%,
+        100% {
+          background-position: 0 50%, 0 50%, 50% 0, 50% 100%, 100% 50%, 100% 50%;
+        }
+      }
+    </style>
   </body>
 </html>

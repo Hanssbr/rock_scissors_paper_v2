@@ -2,27 +2,48 @@ let imgValue;
 let botParse;
 
 document.getElementById("gunting").onclick = function () {
+  document.getElementById("loader").style.display = "block";
+  document.getElementById("loading").style.display = "block";
+  document.getElementById("loading").textContent = "Loading...";
+  setTimeout(function () {
+    document.getElementById("loading").textContent = "Data Loaded";
+    document.getElementById("loader").style.display = "none";
+  }, 1600);
+  setTimeout(function () {
+    bot();
+    if (botParse == "gunting") {
+      window.alert(`You tie!, You choose Scissors and bot choose Scissors`);
+    } else if (botParse == "batu") {
+      window.alert(`You lose!, You choose Scissors and bot choose Rock`);
+    } else {
+      window.alert(`You win!, You choose Scissors and bot choose Paper`);
+    }
+    document.getElementById("loading").style.display = "none";
+  }, 2000);
+};
+
+document.getElementById("batu").onclick = function () {
   bot();
   if (botParse == "gunting") {
-    window.alert(`You tie!, You choose Scissors and bot choose Scissors`);
+    window.alert(`You win!, You choose Rock and bot choose Scissors`);
   } else if (botParse == "batu") {
-    window.alert(`You lose!, You choose Scissors and bot choose Rock`);
+    window.alert(`You tie!, You choose Rock and bot choose Rock`);
   } else {
-    window.alert(`You win!, You choose Scissors and bot choose Paper`);
+    window.alert(`You lose!, You choose Rock and bot choose Paper`);
   }
 };
 
-document.getElementById("gunting").onclick = function () {
+document.getElementById("kertas").onclick = function kertas() {
   bot();
   if (botParse == "gunting") {
-    window.alert(`You tie!, You choose Scissors and bot choose Scissors`);
+    window.alert(`You lose!, You choose Paper and bot choose Scissors`);
   } else if (botParse == "batu") {
-    window.alert(`You lose!, You choose Scissors and bot choose Rock`);
+    window.alert(`You win!, You choose Paper and bot choose Rock`);
   } else {
-    window.alert(`You win!, You choose Scissors and bot choose Paper`);
+    window.alert(`You tie!, You choose Paper and bot choose Paper`);
   }
 };
-  
+setTimeout(kertas, 5000);
 
 function bot() {
   let botValue;
