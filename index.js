@@ -4,9 +4,25 @@ let botParse;
 document.getElementById("gunting").onclick = function () {
   bot();
   if (botParse == "gunting") {
-    window.alert(``);
+    window.alert(`You tie!, You choose Scissors and bot choose Scissors`);
+  } else if (botParse == "batu") {
+    window.alert(`You lose!, You choose Scissors and bot choose Rock`);
+  } else {
+    window.alert(`You win!, You choose Scissors and bot choose Paper`);
   }
 };
+
+document.getElementById("gunting").onclick = function () {
+  bot();
+  if (botParse == "gunting") {
+    window.alert(`You tie!, You choose Scissors and bot choose Scissors`);
+  } else if (botParse == "batu") {
+    window.alert(`You lose!, You choose Scissors and bot choose Rock`);
+  } else {
+    window.alert(`You win!, You choose Scissors and bot choose Paper`);
+  }
+};
+  
 
 function bot() {
   let botValue;
